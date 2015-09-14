@@ -1,5 +1,5 @@
 <?php
-$sendPath = '/var/www/Lights/codesend ';
+$sendPath = '/var/www/HomeLights/codesend ';
 $outletLight = $_POST['outletId'];
 $outletStatus = $_POST['outletStatus'];
 
@@ -29,8 +29,10 @@ if ($outletLight == "1" && $outletStatus == "on") {
         $rfCodes = array(349500, 349644, 349964, 351500, 357644);
 }
   else if ($outletLight = "7" && $outletStatus == "on") {
+  	$minutes = $_POST['minutes']
+    echo $minutes
 	$rfCodes = array(21811);
-	sleep(30);
+	sleep(minutes * 60);
 }
 foreach ($rfCodes as $rfCode) {
         shell_exec($sendPath . $rfCode);
