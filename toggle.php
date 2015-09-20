@@ -30,7 +30,6 @@ if ($outletLight == "1" && $outletStatus == "on") {
 }
   else if ($outletLight = "7" && $outletStatus == "on") {
   	$minutes = $_POST['minutes']
-    echo $minutes
 	$rfCodes = array(21811);
 	sleep(minutes * 60);
 }
